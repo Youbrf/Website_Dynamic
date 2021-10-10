@@ -1,0 +1,45 @@
+nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: x-large;
+    background: white;
+}
+li{
+    list-style-type: none;
+}
+li:hover{
+    background-color:rgb(228, 206, 108);
+}
+
+
+h1{
+    color: goldenrod;
+    margin-top: 183px;
+    margin-left: 200px;
+    font-size: xxx-large;
+}
+body{
+    background: rgba(0, 0, 0, 0.74);
+}
+h2{
+    color: floralwhite;
+    margin-left: 400px;
+    font-size: x-large;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 70%;
+}
+label{
+    color: blanchedalmond;
+    padding: 5px;
+}
+input{
+    padding: 5px;
+}
+input[type=submit]{
+    margin-top: 10px;
+}
