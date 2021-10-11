@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
-        <title>Connection</title>
+        <title>Testing</title>
     </head>
     <body>
         <?php require 'nav.php' ?>
@@ -17,15 +17,15 @@
         if(isset($_GET['possesseur'])){
             try
             {
-                $bdd = new PDO('mysql:host=localhost;dbname=jeuxvideo;charset=utf8', 'root', '');
+                $bdd = new PDO('mysql:host=localhost;dbname=jeuxvideo;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             }
             catch(Exception $e)
             {
                     die('Erreur : '.$e->getMessage());
             }
 
-            $req = $bdd->prepare('SELECT nom, prix FROM jeux_video WHERE possesseur = ?  AND prix <= ? ORDER BY prix');
-            $req->execute(array($_GET['possesseur'], $_GET['prix_max']));
+            $req = $bdd->prepare('SELECT nom, prix FROM jeux_video WHERE possesseur = :possesseur  AND prix <= :prix_max ORDER BY prix');
+            $req->execute(array('possesseur'=>$_GET['possesseur'], 'prix_max'=>$_GET['prix_max']));
 
             echo '<ul>';
             while ($donnees = $req->fetch())
