@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
-        <title>Hello <?php echo $_POST['login']?></title>
+        <title>Hello <?php echo $_POST['pseudo']?></title>
     </head>
     <body>
         <?php require 'nav.php' ?>
@@ -21,10 +21,9 @@
             $req->execute(array(
                 'pseudo' => $_POST['pseudo']));
             $resultat = $req->fetch();
-            echo $resultat['pwd'];
 
             // Comparaison du pass envoyé via le formulaire avec la base
-            $isPasswordCorrect = password_verify($_POST['password'], $resultat['pwd']);
+            $isPasswordCorrect = password_verify($_POST['password'], $resultat['psswd']);
 
             if (!$resultat)
             {
@@ -36,7 +35,7 @@
                     session_start();
                     $_SESSION['id'] = $resultat['id'];
                     $_SESSION['pseudo'] = $_POST['pseudo'];
-                    echo 'Vous êtes connecté !';
+                    echo '<h1>Bonjour '.$resultat['prenom'].' Vous êtes connecté !</h1>';
                 }
                 else {
                     echo 'Mauvais identifiant ou mot de passe !';
@@ -46,8 +45,7 @@
 
 
 
-        //<?php
-            
+        <?php    
         //    $hash_password = password_hash($_POST['password'],PASSWORD_DEFAULT);
         //    if ($_POST['login'] ==('Youssef') AND $_POST['password'] ==('Safari')){
         //       echo '<h1>Bravo '. $_POST['login'].' Vous êtes Connecte sur votre compte</h1>';

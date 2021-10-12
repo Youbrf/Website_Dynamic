@@ -18,8 +18,8 @@
                 die('Erreur : '.$e->getMessage());
         }
         $hash_pwd = password_hash($_POST['mot_de_passe'],PASSWORD_DEFAULT);
-        $req = $bdd->prepare('INSERT INTO `membres`(`id`, `nom`, `prenom`, `adresse`, `code_postal`, `date_de_naissance`, `e-mail`, `pseudo`, `password`) 
-                                VALUES (\'\',:nom,:prenom,:adresse,:code_postal,:date_naiss,:email,:logi,:psswd)');
+        $req = $bdd->prepare('INSERT INTO `membres`(`id`, `nom`, `prenom`, `adresse`, `code_postal`, `date_naissance`, `email`, `pseudo`, `psswd`) 
+                                VALUES (\'\',:nom,:prenom,:adresse,:code_postal,:date_naiss,:email,:logi,:psswrd)');
         $req->execute(array(
             'nom'=>$_POST['nom'],
             'prenom'=>$_POST['prenom'],
@@ -28,7 +28,7 @@
             'date_naiss'=>$_POST['date_de_naissance'],
             'email'=>$_POST['adresse_mail'],
             'logi'=>$_POST['pseudo'],
-            'psswd'=>$hash_pwd
+            'psswrd'=>$hash_pwd
         ))
 
     ?>
