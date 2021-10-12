@@ -8,7 +8,7 @@
     <body>
         <?php require 'nav.php' ?>
         <form method="post" action="connected.php">
-            <label for="login">Login</label><input type="text" name='login' placeholder='GoldenHour'>
+            <label for="pseudo">Login</label><input type="text" name='pseudo' placeholder='GoldenHour'>
             <label for="password">Password</label><input type="password" name='password' placeholder='PassWord21!'>
             <input type="submit" value='Connection'>
         </form>

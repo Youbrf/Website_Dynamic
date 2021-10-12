@@ -20,10 +20,12 @@
             <input type="text" name="date_de_naissance" placeholder="Date de naissance"><br>
             <label for="adresse_mail">E-mail </label>
             <input type="text" name="adresse_mail" placeholder="Adresse mail"><br>
-            <label for="login">Login </label>
-            <input type="text" name="login" placeholder="Login"><br>
+            <label for="pseudo">Login </label>
+            <input type="text" name="pseudo" placeholder="Login"><br>
             <label for="mot_de_passe">Mot de passe </label>
-            <input type="password" name="mot_de_passe" placeholder="Mot de passe"><br>  
+            <input type="password" name="mot_de_passe" placeholder="Mot de passe"><br>
+            <label for="confirmation_mot_de_passe">Confirmation du mot de passe </label>
+            <input type="password" name="confirmation_mot_de_passe" placeholder="Confirmation du mot de passe"><br>  
             <input type="submit" value="s'inscrire">
         </form>
     </body>
